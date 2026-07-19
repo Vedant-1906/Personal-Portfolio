@@ -1,0 +1,302 @@
+:root {
+    --bg-surface: #f4f3ef;      /* Warm premium cream gallery surface */
+    --card-surface: #ffffff;    /* Stark pure white cards */
+    --ink-dark: #1a1a1a;        /* Solid sharp black ink typography */
+    --border-thick: 3px solid #1a1a1a; /* Hard-edged comic/editorial style */
+    --accent-yellow: #facc15;   /* Energetic bright highlight yellow */
+    --accent-blue: #38bdf8;     /* Sky blue highlight */
+    --card-shadow: 6px 6px 0px #1a1a1a; /* Distinct flat offset drop shadow */
+}
+
+/* Retro Tint Optional Class State */
+body.retro-tint-active {
+    --bg-surface: #e7e5e4;
+    --card-surface: #f5f5f4;
+    --accent-yellow: #f97316;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-surface);
+    color: var(--ink-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Flat Grid Workspace Alignment */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1050px;
+    width: 100%;
+}
+
+/* Base Bold Card Structure */
+.grid-card {
+    background-color: var(--card-surface);
+    border: var(--border-thick);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+}
+
+/* Elevate up and flatten shadow on pass-through hover */
+.grid-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px var(--ink-dark);
+}
+
+/* Specific Card Rules */
+.profile-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.status-dot {
+    color: #16a34a;
+}
+
+.dev-tag {
+    color: var(--ink-dark);
+    opacity: 0.4;
+}
+
+.hero-name {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.highlight {
+    background-color: var(--accent-yellow);
+    padding: 0 0.4rem;
+    display: inline-block;
+}
+
+.hero-bio {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #404040;
+}
+
+.social-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.badge-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--ink-dark);
+    border-radius: 6px;
+    color: var(--ink-dark);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+.badge-link:hover {
+    background-color: var(--ink-dark);
+    color: white;
+}
+
+/* Academic Sub-details */
+.info-card h3, .stack-card h3, .workshop-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px dashed var(--ink-dark);
+    padding-bottom: 0.5rem;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.meta-label {
+    font-family: 'Space Mono', monospace;
+    color: #666;
+}
+
+.meta-value {
+    font-weight: 700;
+}
+
+.code-font {
+    font-family: 'Space Mono', monospace;
+    background-color: rgba(0,0,0,0.05);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Toolkit Area */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: #f1f5f9;
+    border: 2px solid var(--ink-dark);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+/* Projects Board spanning 2 wide columns */
+.projects-card {
+    grid-column: span 2;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.project-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-node {
+    border: 2px solid var(--ink-dark);
+    border-radius: 8px;
+    padding: 1.25rem;
+    background-color: #fafafa;
+    transition: background-color 0.2s ease;
+}
+
+.project-node:hover {
+    background-color: rgba(56, 189, 248, 0.1); /* Soft layout accent */
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.project-meta h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.project-arrow {
+    color: var(--ink-dark);
+    font-size: 0.95rem;
+}
+
+.project-node p {
+    font-size: 0.9rem;
+    color: #525252;
+    line-height: 1.4;
+}
+
+/* Interaction Showcase */
+.panel-desc {
+    font-size: 0.85rem;
+    color: #525252;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.interactive-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.action-btn {
+    width: 100%;
+    background-color: var(--accent-blue);
+    color: var(--ink-dark);
+    border: 2px solid var(--ink-dark);
+    padding: 0.6rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    box-shadow: 3px 3px 0px var(--ink-dark);
+    transition: all 0.1s ease;
+}
+
+.action-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--ink-dark);
+}
+
+.counter-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--ink-dark);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    background-color: #f8fafc;
+}
+
+.circle-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--ink-dark);
+    background-color: var(--accent-yellow);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#counter-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Responsive Grid Snapping for smaller devices */
+@media (max-width: 850px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-card, .projects-card {
+        grid-column: span 1;
+    }
+    .hero-name {
+        font-size: 2.4rem;
+    }
+}
